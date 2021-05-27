@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
-  <title>Bootstrap 4 Example</title>
-  <meta charset="utf-8">
+	<title>Login</title>
+	<link rel="stylesheet" href="editing.css">
+	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-    <header>
+<header>
       <div class="container-fluid">
         <div class="row">
     <div class="col-md-6 col-sm-4">
@@ -54,79 +51,63 @@
 
 <header>
 
-<div id="demo" class="carousel slide" data-ride="carousel">
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="img-fluid" src="images/pic2.jpg" alt="Los Angeles" width="1700" height="500">
-         
-    </div>
-    <div class="carousel-item">
-      <img class="img-fluid" src="images/pic1.jpg" alt="Chicago" width="1700" height="500">
-        
-    </div>
-    <div class="carousel-item">
-      <img class="img-fluid" src="images/pic4.jpg" alt="New York" width="1700" height="500">
-       
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 col-sm-8">
-            
-        </div>
-        
-        <div class="col-md-4 col-sm-8">
-             <p>
-                <br>
-                <br>
-                <h2>Apple</h2>
-                <br>
-       The <b>MacBook</b> is a brand of Macintosh laptop computers by <br><b>Apple</b> Inc. that merged the PowerBook and iBook <br>lines during the Mac transition to Intel processors.<br> The current lineup consists of the MacBook Air (2008–present) <br>and the <b>MacBook Pro</b> (2006–present)
-  
+<div class="login">
+<div class="form">
+<div class="regform">
+	<p class="text-white"><font size="+2">Login</font></p>
+	<form name="form1" method="post" >
+		<table width="90%" border="0">
+			<tr> 
+				
+				<td><input type="text" name="username" placeholder="username" ></td>
+			</tr>
+			<tr> 
+				
+				<td><input type="password" name="password" placeholder="Password"></td>
+			</tr>
+			<tr> 
+				
+				<td><input class=" text-danger bg-dark" type="submit" name="submit" value="Login"></td>
+			</tr>
+		</table>
+	</form>
+	</div>
+	</div>
+	</div>
+	<?php
+include'connection.php';
 
+if(isset($_POST['submit']))
+{
+	$user=$_POST['username'];
+	$pass=$_POST['password'];
 
-  </p>
-            
-        </div>
-        <div class="col-md-4 col-sm-8">
-            
-        </div>
-        
-    </div>
-    
-</div>
+$query="select* from tblusers where username='$user' AND  userpasswor='$pass' ";
+$res=mysqli_query($conn,$query);
+$row=mysqli_num_rows($res);
 
+if($row>0)
 
- 
-     <h2>Latest Products</h2>
-     
-     
-        
+{
+	session_start();
+	 
+	$_SESSION['username']=$user;
+	
+	$_SESSION['userpasswor']=$pass;
+	header('Location:display.php');
+	
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-8"><img class="poto img-fluid" src="images/prod1.jpg"></div>
-             <div class="col-md-4 col-sm-8"><img class="poto img-fluid" src="images/prod2.jpg"></div>
-              <div class="col-md-4 col-sm-8"><img class="poto img-fluid" src="images/lprod3.jpg"></div>
-            
-        </div>
-        
-    </div>
-    
- <!-- Footer -->
+}
+else
+{
+	?> <div class="text-danger"><?php echo "Useranme and password is invalid";?></div>
+	<?php
+}
+}
+
+?>
+<!-- Footer -->
 <footer class="page-footer font-small unique-color-dark">
 
   <div style="background-color: #6351ce;">
@@ -269,9 +250,7 @@
 <!-- Footer -->
 
 
-
-
-
+	
 
 </body>
 </html>

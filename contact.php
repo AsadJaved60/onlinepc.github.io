@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Bootstrap 4 Example</title>
-  <meta charset="utf-8">
+	<title>Contact us</title>
+	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <header>
-      <div class="container-fluid">
+	<header>
+    <div class="container-fluid">
         <div class="row">
     <div class="col-md-6 col-sm-4">
                 <img src="images/logo1.jpg" class="logo" alt="not found" >
@@ -53,80 +53,67 @@
 </nav>
 
 <header>
+	<h1>Contact Us</h1>
+	<br>
+	<br>
 
-<div id="demo" class="carousel slide" data-ride="carousel">
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="img-fluid" src="images/pic2.jpg" alt="Los Angeles" width="1700" height="500">
-         
-    </div>
-    <div class="carousel-item">
-      <img class="img-fluid" src="images/pic1.jpg" alt="Chicago" width="1700" height="500">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-md-6">
+				<form>
+					<label>Name: </label><input type="text" id="fname"><br>
+					<label>Email: </label><input type="email" id="email"><br>
+					<label>Phone: </label><input type="number"id="phonono"><br>
+					<label>Role:</label>
+					<input type="radio" name="roll" value="student"> Student
+  <input type="radio" name="roll" value="job"> Job<br>
+  <label>City:</label><br>
+					<select>
+					<option>Lahore</option>
+					<option>Multan</option>
+					<option>Karachi</option>
+					<option>Islamabad</option>
+				</select>
+				<br>
+        <br>
         
-    </div>
-    <div class="carousel-item">
-      <img class="img-fluid" src="images/pic4.jpg" alt="New York" width="1700" height="500">
-       
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
+
+				<label>Message</label><br>
+				<textarea rows="6" cols="40">
+					
+				</textarea>
+				<br>
+
+				<button class="btn btn-primary">Submit</button>
+
+				</form>
+			</div>
+
+			<div class="col-md-6 col-sm-8 ">
+				<p>
+				<b>Address</b><br>
+Apple<br>
+One Apple Park Way<br>
+Cupertino, CA 95014<br>
+(408) 996–1010 <br>
+
+Cupertino, CA 95014 <br>
+
+(408) 606-5775
+</p>
+
+<div class="col-sm-8 col-md-6">
+	<h2>Map</h2>
+
+	<img class="maploc"src="images/map.png">
+	
 </div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 col-sm-8">
-            
-        </div>
-        
-        <div class="col-md-4 col-sm-8">
-             <p>
-                <br>
-                <br>
-                <h2>Apple</h2>
-                <br>
-       The <b>MacBook</b> is a brand of Macintosh laptop computers by <br><b>Apple</b> Inc. that merged the PowerBook and iBook <br>lines during the Mac transition to Intel processors.<br> The current lineup consists of the MacBook Air (2008–present) <br>and the <b>MacBook Pro</b> (2006–present)
-  
-
-
-  </p>
-            
-        </div>
-        <div class="col-md-4 col-sm-8">
-            
-        </div>
-        
-    </div>
-    
-</div>
-
-
- 
-     <h2>Latest Products</h2>
-     
-     
-        
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-8"><img class="poto img-fluid" src="images/prod1.jpg"></div>
-             <div class="col-md-4 col-sm-8"><img class="poto img-fluid" src="images/prod2.jpg"></div>
-              <div class="col-md-4 col-sm-8"><img class="poto img-fluid" src="images/lprod3.jpg"></div>
-            
-        </div>
-        
-    </div>
-    
- <!-- Footer -->
+				
+			</div>
+		</div>
+		
+	</div>
+	<!-- Footer -->
 <footer class="page-footer font-small unique-color-dark">
 
   <div style="background-color: #6351ce;">
@@ -269,9 +256,8 @@
 <!-- Footer -->
 
 
-
-
-
-
 </body>
 </html>
+<?php
+include'connection.php';
+?>

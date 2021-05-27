@@ -1,18 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <title>Bootstrap 4 Example</title>
-  <meta charset="utf-8">
+	<title>Display Products</title>
+	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-    <header>
+<head>
+	<title>Display Products</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+</head>
+
+<header>
       <div class="container-fluid">
         <div class="row">
     <div class="col-md-6 col-sm-4">
@@ -52,81 +54,55 @@
   </ul>
 </nav>
 
-<header>
+</header>
+<?php
+include'connection.php';
 
-<div id="demo" class="carousel slide" data-ride="carousel">
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="img-fluid" src="images/pic2.jpg" alt="Los Angeles" width="1700" height="500">
-         
-    </div>
-    <div class="carousel-item">
-      <img class="img-fluid" src="images/pic1.jpg" alt="Chicago" width="1700" height="500">
-        
-    </div>
-    <div class="carousel-item">
-      <img class="img-fluid" src="images/pic4.jpg" alt="New York" width="1700" height="500">
-       
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-</div>
-
+ $query="select * from tblproducts";
+ $res=mysqli_query($conn,$query);
+ ?>
+ 
 <div class="container">
-    <div class="row">
-        <div class="col-md-4 col-sm-8">
-            
-        </div>
-        
-        <div class="col-md-4 col-sm-8">
-             <p>
-                <br>
-                <br>
-                <h2>Apple</h2>
-                <br>
-       The <b>MacBook</b> is a brand of Macintosh laptop computers by <br><b>Apple</b> Inc. that merged the PowerBook and iBook <br>lines during the Mac transition to Intel processors.<br> The current lineup consists of the MacBook Air (2008–present) <br>and the <b>MacBook Pro</b> (2006–present)
-  
-
-
-  </p>
-            
-        </div>
-        <div class="col-md-4 col-sm-8">
-            
-        </div>
-        
-    </div>
-    
-</div>
-
+<div class="row">
 
  
-     <h2>Latest Products</h2>
-     
-     
-        
+ <?php
+ ?><br><br><br>
+ <?php
+ 
+while($row=mysqli_fetch_array($res))
+{
+	$var=$row['instock'];
+	if($var==1)
+	{
+ ?>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-8"><img class="poto img-fluid" src="images/prod1.jpg"></div>
-             <div class="col-md-4 col-sm-8"><img class="poto img-fluid" src="images/prod2.jpg"></div>
-              <div class="col-md-4 col-sm-8"><img class="poto img-fluid" src="images/lprod3.jpg"></div>
-            
-        </div>
-        
-    </div>
-    
- <!-- Footer -->
+
+
+<tr>  
+<div class="col-md-4 col-lg-4 col-sm-12">
+<br>
+
+<a href="product.php?productid=<?php echo $row['productid'];?>" target="_blank"><img  class="border border-secondary" src="<?php echo $row['image'];?>" height="250" width="250"></a>
+				
+		
+				
+					<br>
+</div>
+</tr>
+
+
+
+
+<br>
+<br>
+<?php
+	}
+}
+
+?>
+
+<!-- Footer -->
 <footer class="page-footer font-small unique-color-dark">
 
   <div style="background-color: #6351ce;">
@@ -273,5 +249,3 @@
 
 
 
-</body>
-</html>

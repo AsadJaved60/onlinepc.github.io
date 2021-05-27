@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Bootstrap 4 Example</title>
-  <meta charset="utf-8">
+	<title>About us</title>
+	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <header>
-      <div class="container-fluid">
+	<header>
+    <div class="container-fluid">
         <div class="row">
     <div class="col-md-6 col-sm-4">
                 <img src="images/logo1.jpg" class="logo" alt="not found" >
@@ -53,80 +53,48 @@
 </nav>
 
 <header>
-
-<div id="demo" class="carousel slide" data-ride="carousel">
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="img-fluid" src="images/pic2.jpg" alt="Los Angeles" width="1700" height="500">
-         
-    </div>
-    <div class="carousel-item">
-      <img class="img-fluid" src="images/pic1.jpg" alt="Chicago" width="1700" height="500">
-        
-    </div>
-    <div class="carousel-item">
-      <img class="img-fluid" src="images/pic4.jpg" alt="New York" width="1700" height="500">
-       
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 col-sm-8">
-            
-        </div>
-        
-        <div class="col-md-4 col-sm-8">
-             <p>
-                <br>
-                <br>
-                <h2>Apple</h2>
-                <br>
-       The <b>MacBook</b> is a brand of Macintosh laptop computers by <br><b>Apple</b> Inc. that merged the PowerBook and iBook <br>lines during the Mac transition to Intel processors.<br> The current lineup consists of the MacBook Air (2008–present) <br>and the <b>MacBook Pro</b> (2006–present)
-  
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm -8">
+				<h3>Garage Start-Up</h3>
+Apple Inc. had its genesis in the lifelong dream of Stephen G. Wozniak to build his own computer—a dream that was made suddenly feasible with the arrival in 1975 of the first commercially successful microcomputer, the Altair 8800, which came as a kit and used the recently invented microprocessor chip. Encouraged by his friends at the Homebrew Computer Club, a San Francisco Bay area group centred around the Altair, Wozniak quickly came up with a plan for his own microcomputer. In 1976, when the Hewlett-Packard Company, where Wozniak was an engineering intern, expressed no interest in his design, Wozniak, then 26 years old, together with a former high-school classmate, 21-year-old Steve Jobs, moved production operations to the Jobs family garage—and the Silicon Valley garage start-up company legend was born. Jobs and Wozniak named their company Apple. For working capital, Jobs sold his Volkswagen minibus and Wozniak his programmable calculator. Their first model was simply a working circuit board, but at Jobs’s insistence the 1977 version was a stand-alone machine in a custom-molded plastic case, in contrast to the forbidding steel boxes of other early machines. This Apple II also offered a colour display and other features that made Wozniak’s creation the first microcomputer that appealed to the average person.
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6 col-sm-8">
+				<img class="stv"src="images/firstlaptop.jpg">
+				<br>
+				<p style="margin-top: 10px; text-align: center;">
+					<strong>
+					Apple's Lisa computer<br>
+                    Apple's Lisa computer.<br>
+                    Courtesy of Apple Computer, Inc.<br>
+                </strong>
+				</p>
+				
+			</div>
+			<div class="col-md-6 col-sm-8">
+				<img class="stv" src="images/steve.jpg">
+				<br>
+				<p style="margin-top: 10px; text-align: center;">
+					<strong>
+					Steve Woznaik and Steve JObs <br>
+                    Courtesy Of Apple computer, Inc.<br>
+                    
+                </strong>
+				</p>
+				
+			</div>
+			
+		</div>
+		
+	</div>
 
 
-  </p>
-            
-        </div>
-        <div class="col-md-4 col-sm-8">
-            
-        </div>
-        
-    </div>
-    
-</div>
 
 
- 
-     <h2>Latest Products</h2>
-     
-     
-        
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-8"><img class="poto img-fluid" src="images/prod1.jpg"></div>
-             <div class="col-md-4 col-sm-8"><img class="poto img-fluid" src="images/prod2.jpg"></div>
-              <div class="col-md-4 col-sm-8"><img class="poto img-fluid" src="images/lprod3.jpg"></div>
-            
-        </div>
-        
-    </div>
-    
- <!-- Footer -->
+	<!-- Footer -->
 <footer class="page-footer font-small unique-color-dark">
 
   <div style="background-color: #6351ce;">
@@ -267,11 +235,6 @@
 
 </footer>
 <!-- Footer -->
-
-
-
-
-
 
 </body>
 </html>

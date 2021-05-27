@@ -1,37 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <title>Bootstrap 4 Example</title>
-  <meta charset="utf-8">
+	<title>Display Products</title>
+	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  
 </head>
-<body>
-    <header>
-      <div class="container-fluid">
-        <div class="row">
-    <div class="col-md-6 col-sm-4">
-                <img src="images/logo1.jpg" class="logo" alt="not found" >
-            </div>
-            
-            <div class="col-md-6 col-sm-8">
-            
-<a href="#" class="fa fa-facebook"></a>
-<a href="#" class="fa fa-twitter"></a>
-<a href="#" class="fa fa-instagram"></a>
-<a href="#" class="fa fa-google"></a>
-                </div>
-              </div>
-            </div>
-
-
-
-
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <ul class="navbar-nav">
     <li class="nav-item active">
@@ -52,81 +25,51 @@
   </ul>
 </nav>
 
-<header>
+<?php
 
-<div id="demo" class="carousel slide" data-ride="carousel">
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
-  </ul>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="img-fluid" src="images/pic2.jpg" alt="Los Angeles" width="1700" height="500">
-         
-    </div>
-    <div class="carousel-item">
-      <img class="img-fluid" src="images/pic1.jpg" alt="Chicago" width="1700" height="500">
-        
-    </div>
-    <div class="carousel-item">
-      <img class="img-fluid" src="images/pic4.jpg" alt="New York" width="1700" height="500">
-       
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
+include'connection.php';
+
+$id=$_GET['productid'];
+$query="select * from tblproducts where productid=$id";
+$res=mysqli_query($conn,$query);
+
+$row=mysqli_fetch_array($res);
+
+	?>
+	<div class="container">
+	<div class="row">
+	<div class="col-md-6">
+	<br>
+	<br>
+	<img src="<?php echo $row['image'];?>" height="500"width="300"> 
+	</div>
+	
+<div class="col-md-6 m-auto">
+<br>
+<br>
+<br>
+<strong>Product iD :</strong>
+<p ><?php echo $row['productid']; ?></p>
+<strong>product Name :</strong>
+<p ><?php echo $row['name'];?> </p>
+<strong>Product Price :</strong>
+<p ><?php echo $row['price'];?> </p>
+<strong>Product Code:</strong>
+<p ><?php echo $row['code'];?> </p>
+<strong>Product Instock :</strong>
+<p ><?php echo $row['instock'];?> </p>
+<strong>Product Discount : </strong>
+<p ><?php echo $row['discount'];?> </p>
+<strong>Product Size :</strong>
+<p ><?php echo $row['size'];?> </p>
+<strong>Product Detail :</strong>
+<p><?php echo $row['detail'];?> </p>
+
+
 </div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 col-sm-8">
-            
-        </div>
-        
-        <div class="col-md-4 col-sm-8">
-             <p>
-                <br>
-                <br>
-                <h2>Apple</h2>
-                <br>
-       The <b>MacBook</b> is a brand of Macintosh laptop computers by <br><b>Apple</b> Inc. that merged the PowerBook and iBook <br>lines during the Mac transition to Intel processors.<br> The current lineup consists of the MacBook Air (2008–present) <br>and the <b>MacBook Pro</b> (2006–present)
-  
-
-
-  </p>
-            
-        </div>
-        <div class="col-md-4 col-sm-8">
-            
-        </div>
-        
-    </div>
-    
 </div>
-
-
- 
-     <h2>Latest Products</h2>
-     
-     
-        
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-8"><img class="poto img-fluid" src="images/prod1.jpg"></div>
-             <div class="col-md-4 col-sm-8"><img class="poto img-fluid" src="images/prod2.jpg"></div>
-              <div class="col-md-4 col-sm-8"><img class="poto img-fluid" src="images/lprod3.jpg"></div>
-            
-        </div>
-        
-    </div>
-    
- <!-- Footer -->
+</div>
+<!-- Footer -->
 <footer class="page-footer font-small unique-color-dark">
 
   <div style="background-color: #6351ce;">
